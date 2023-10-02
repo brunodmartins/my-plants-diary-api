@@ -10,8 +10,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.UUID;
-
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,7 +24,7 @@ public class PlantControllerTest {
     @DisplayName("Should return a new plant upon a GET request")
     @SneakyThrows
     public void testGetPlant(){
-        String id = UUID.randomUUID().toString();
+        Long id = 19L;
         mockMvc.perform(MockMvcRequestBuilders.get("/plants/" + id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))

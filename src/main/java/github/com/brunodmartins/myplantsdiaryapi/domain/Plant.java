@@ -1,8 +1,15 @@
 package github.com.brunodmartins.myplantsdiaryapi.domain;
 
-/**
- * A Plant object
- * @param id
- */
-public record Plant(String id) {
+import lombok.Data;
+
+import java.time.LocalDate;
+
+@Data
+public class Plant {
+
+    private Long id;
+
+    private String name;
+
+    private LocalDate acquireDate;
 }
